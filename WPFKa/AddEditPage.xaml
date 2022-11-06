@@ -1,0 +1,41 @@
+﻿<Page x:Class="WPFKa.AddEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFKa"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditPage">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Название:"
+                   FontSize="15"
+                   Margin="20"
+                   HorizontalAlignment="Center"/>
+        <TextBlock Text="Количество звёзд:" 
+                   TextWrapping="Wrap"
+                   Grid.Row="1"
+                   FontSize="15"
+                   Margin="20"
+                   HorizontalAlignment="Center"/>
+        <TextBlock Text="Страна:" 
+                   Grid.Row="2"
+                   FontSize="15"
+                   Margin="20"
+                   HorizontalAlignment="Center"/>
+        <TextBox Text="{Binding Name}" MaxHeight="100" Grid.Column="1" Margin="0,25,20,25" />
+        <TextBox Text="{Binding CountOfStars}" Grid.Column="1" Grid.Row="1" Margin="0,25,400,25"/>
+        <ComboBox SelectedItem = "{Binding Country}"  Name="ComboContries" DisplayMemberPath="Name" Grid.Column="1" Grid.Row="2" Margin="0,25,20,25"/>
+        <Button x:Name="BtnSave" Content="Сохранить" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Click="BtnSave_Click"/>
+    </Grid>
+</Page>
